@@ -1,0 +1,24 @@
+/*header*/
+.header{
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 2px gray solid;
+}
+.header h1{
+    margin: 20px;
+}
+/*nav*/
+.grid{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+.nav{
+    border-right: 2px gray solid;
+}
+.section{
+    margin-left: 20px;
+}
+.footer{
+    text-align: right;
+}
+
