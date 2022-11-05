@@ -1,5 +1,40 @@
+.header{
+    border-bottom: 2px gray solid;
+}
+.navigation{
+    border-right: 2px gray solid;
+}
+.navigation h3{
+    font-size: 20px;
+    text-align: center;
+    margin : 10px 0;
+}
+.navigation ol {
+    margin-top: 10px;
+    padding-left: 25px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+}
+.section{
+    margin-top: 30px;
+}
+.title{
+    text-align: center;
+}
+iframe{
+    width:840px; height:471px;
+    margin-left: 15px;
+}
+title{
+    font-size: 60px;
+}
 a {
-    color: red;
+    color: rgb(119, 68, 153);
+    text-decoration: none;
+    font-size: x-large;
+    text-align: center;
 }
 li a{
     color: black;
