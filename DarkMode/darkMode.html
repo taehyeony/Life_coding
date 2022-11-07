@@ -33,6 +33,7 @@
         document.querySelector('body').style.backgroundColor='black';
         document.querySelector('body').style.color='white';
         ">
+        <!--before refactoring-->
         <input id="day_night" type="button" value="night" onclick="
             if(document.querySelector('#day_night').value === 'night'){
                 document.querySelector('body').style.backgroundColor='black';
@@ -45,6 +46,7 @@
             }
         ">
         <br>
+        <!--after refactoring-->
         <input id="day_night2" type="button" value="night" onclick="
             let target = document.querySelector('body');
             if(this.value === 'night'){
