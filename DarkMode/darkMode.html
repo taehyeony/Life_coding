@@ -33,6 +33,17 @@
         document.querySelector('body').style.backgroundColor='black';
         document.querySelector('body').style.color='white';
         ">
+        <input id="day_night" type="button" value="night" onclick="
+            if(document.querySelector('#day_night').value === 'night'){
+                document.querySelector('body').style.backgroundColor='black';
+                document.querySelector('body').style.color='white';
+                document.querySelector('#day_night').value = 'day';
+            }else{
+                document.querySelector('body').style.backgroundColor='white';
+                document.querySelector('body').style.color='black';
+                document.querySelector('#day_night').value = 'night';
+            }
+        ">
     </div>
 </body>
 </html>
