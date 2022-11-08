@@ -9,14 +9,14 @@
 </head>
 <body>
     <div class="header">
-        <h1>Web</h1>
+        <h1><a href="">Web</a></h1>
     </div>
     <div class="grid">
         <div class="nav">
             <ol>
-                <li>html</li>
-                <li>css</li>
-                <li>JS</li>
+                <li><a href="">html</a></li>
+                <li><a href="">css</a></li>
+                <li><a href="">JS</a></li>
             </ol>
         </div>
         <div class="section">
@@ -34,7 +34,7 @@
         document.querySelector('body').style.color='white';
         ">
         <!--before refactoring-->
-        <input id="day_night" type="button" value="night" onclick="
+        <!-- <input id="day_night" type="button" value="night" onclick="
             if(document.querySelector('#day_night').value === 'night'){
                 document.querySelector('body').style.backgroundColor='black';
                 document.querySelector('body').style.color='white';
@@ -45,7 +45,7 @@
                 document.querySelector('#day_night').value = 'night';
             }
         ">
-        <br>
+        <br> -->
         <!--after refactoring-->
         <input id="day_night2" type="button" value="night" onclick="
             let target = document.querySelector('body');
@@ -53,10 +53,20 @@
                 target.style.backgroundColor='black';
                 target.style.color='white';
                 this.value = 'day';
+                
+                let alist = document.querySelectorAll('a');
+                for(let i in alist){
+                    alist[i].style.color = 'powderblue';
+                }
             }else{
                 target.style.backgroundColor='white';
                 target.style.color='black';
                 this.value = 'night';
+                
+                let alist = document.querySelectorAll('a');
+                for(let i in alist){
+                    alist[i].style.color = 'blue';
+                }
             }
         ">
     </div>
