@@ -7,31 +7,35 @@
     <title>Dark mode</title>
     <link rel="stylesheet" href="darkMode.css">
     <script>
-        function LinkerSetColor(color){
-            let alist = document.querySelectorAll('a');
+        var Linker = {
+            setColor:function(color){
+                let alist = document.querySelectorAll('a');
                 for(let i in alist){
                     alist[i].style.color = color;
                 }
+            }
         }
-        function BodySetColor(color){
-            document.querySelector('body').style.color = color;
-        }
-        function BodySetBackgroundColor(color){
+        var Body = {
+            setColor:function(color){
+                document.querySelector('body').style.color = color;
+            },
+            setBackgroundColor:function(color){
             document.querySelector('body').style.backgroundColor = color;
+            }
         }
         function nightDayHandler(self){
             if(self.value === 'night'){
-                BodySetBackgroundColor('black');
-                BodySetColor('white');
+                Body.setBackgroundColor('black');
+                Body.setColor('white');
                 self.value = 'day'; 
                 
-                LinkerSetColor('powderblue');
+                Linker.setColor('powderblue');
             }else{
-                BodySetBackgroundColor('white');
-                BodySetColor('black');
+                Body.setBackgroundColor('white');
+                Body.setColor('black');
                 self.value = 'night';
 
-                LinkerSetColor('blue');
+                Linker.setColor('blue');
             }
         }
     </script>
