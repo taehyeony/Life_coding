@@ -7,16 +7,14 @@ let app = http.createServer(function(request,response){
     let _url = request.url;
     let queryData = url.parse(_url, true).query;
     let title = queryData.id;
-    if(_url == '/'){
+    let pathname = url.parse(_url, true).pathname;
+    if(_url === '/'){
         title = 'Welcome';
     }
-    if(_url == '/favicon.ico'){
-        return response.writeHead(404);
-    }
-    console.log(title);
-    response.writeHead(200);
-    fs.readFile(`Data/${title}.txt`,'utf8',function(err,description){
-        let template = `
+    
+    if(pathname === '/'){
+        fs.readFile(`Data/${title}.txt`, "utf8", function (err, description) {
+          let template = `
         <!doctype html>
         <html>
         <head>
@@ -35,7 +33,12 @@ let app = http.createServer(function(request,response){
         </body>
         </html>
         `;
+        response.writeHead(200);
         response.end(template);
-    })
+        });
+    } else {
+        response.writeHead(404);
+        response.end('Not Found');
+    }
 });
 app.listen(3000);
